@@ -28,6 +28,13 @@ export const siteConfig = {
       zip: "75201",
       country: "USA",
     },
+    // Approximate downtown Dallas coordinates — replace with the real
+    // office location before launch.
+    geo: {
+      latitude: 32.7767,
+      longitude: -96.797,
+    },
+    openingHours: ["Mo-Fr 08:00-18:00"],
   },
 
   social: {

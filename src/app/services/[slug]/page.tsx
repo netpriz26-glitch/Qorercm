@@ -8,8 +8,7 @@ import { Timeline } from "@/components/ui/Timeline";
 import { MockupPanel } from "@/components/ui/MockupPanel";
 import { CTASection } from "@/components/CTASection";
 import { Reveal } from "@/components/motion/Reveal";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { services, getServiceBySlug } from "@/lib/content/services";
 import { siteConfig } from "@/lib/site-config";
 
@@ -44,12 +43,12 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
+      <Breadcrumbs
+        items={[
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },
           { name: service.name, path: `/services/${service.slug}` },
-        ])}
+        ]}
       />
 
       <PageHero eyebrow="Services" title={service.name} description={service.description}>

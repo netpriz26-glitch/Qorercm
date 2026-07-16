@@ -3,9 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
+import { blogPostingSchema } from "@/lib/schema";
 import { blogPosts, getPostBySlug } from "@/lib/content/blog";
 import { renderInlineMarkdown } from "@/lib/inline-markdown";
 import { siteConfig } from "@/lib/site-config";
@@ -54,12 +55,12 @@ export default async function BlogPostPage({
   return (
     <article className="bg-white">
       <JsonLd data={blogPostingSchema(post)} />
-      <JsonLd
-        data={breadcrumbSchema([
+      <Breadcrumbs
+        items={[
           { name: "Home", path: "/" },
           { name: "Blog", path: "/blog" },
           { name: post.title, path: `/blog/${post.slug}` },
-        ])}
+        ]}
       />
 
       <div className="relative overflow-hidden bg-ink-950 py-14 text-white sm:py-20">

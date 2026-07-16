@@ -26,6 +26,47 @@ export function organizationSchema() {
   };
 }
 
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": `${siteConfig.url}/#localbusiness`,
+    name: siteConfig.legalName,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    telephone: siteConfig.contact.phone,
+    email: siteConfig.contact.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.contact.address.line1,
+      addressLocality: siteConfig.contact.address.city,
+      addressRegion: siteConfig.contact.address.state,
+      postalCode: siteConfig.contact.address.zip,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: siteConfig.contact.geo.latitude,
+      longitude: siteConfig.contact.geo.longitude,
+    },
+    openingHours: siteConfig.contact.openingHours,
+  };
+}
+
+export function personSchema(person: { name: string; title: string; bio: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: person.name,
+    jobTitle: person.title,
+    description: person.bio,
+    worksFor: {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+    },
+  };
+}
+
 export function serviceSchema() {
   return {
     "@context": "https://schema.org",

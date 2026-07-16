@@ -4,8 +4,7 @@ import { TiltCard } from "@/components/ui/TiltCard";
 import { Icon3DTile } from "@/components/ui/Icon3DTile";
 import { ButtonLink } from "@/components/ui/Button";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { resources } from "@/lib/content/resources";
 
 export const metadata: Metadata = {
@@ -17,12 +16,7 @@ export const metadata: Metadata = {
 export default function ResourcesPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Resources", path: "/resources" },
-        ])}
-      />
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Resources", path: "/resources" }]} />
       <PageHero
         eyebrow="Resources"
         title="Guides for Running a Healthier Revenue Cycle"

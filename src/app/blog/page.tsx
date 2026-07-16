@@ -4,8 +4,7 @@ import { Newspaper, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { blogPosts } from "@/lib/content/blog";
 
 export const metadata: Metadata = {
@@ -17,12 +16,7 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Blog", path: "/blog" },
-        ])}
-      />
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]} />
       <PageHero
         eyebrow="Blog"
         title="Revenue Cycle Insights"

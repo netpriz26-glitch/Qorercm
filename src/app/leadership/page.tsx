@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { leadership } from "@/lib/content/leadership";
 
 export const metadata: Metadata = {
@@ -15,11 +14,8 @@ export const metadata: Metadata = {
 export default function LeadershipPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Leadership", path: "/leadership" },
-        ])}
+      <Breadcrumbs
+        items={[{ name: "Home", path: "/" }, { name: "Leadership", path: "/leadership" }]}
       />
       <PageHero
         eyebrow="Leadership"

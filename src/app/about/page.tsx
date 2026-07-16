@@ -8,8 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 import { Scene3D } from "@/components/three/Scene3D";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -54,12 +53,7 @@ const orgStats = [
 export default function AboutPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-        ])}
-      />
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
       <PageHero
         eyebrow="About Us"
         title={`Why ${siteConfig.name} Exists`}

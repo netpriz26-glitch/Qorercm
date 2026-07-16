@@ -7,8 +7,7 @@ import { TiltCard } from "@/components/ui/TiltCard";
 import { Icon3DTile } from "@/components/ui/Icon3DTile";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { Reveal } from "@/components/motion/Reveal";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { services } from "@/lib/content/services";
 import { siteConfig } from "@/lib/site-config";
 
@@ -22,12 +21,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Services", path: "/services" },
-        ])}
-      />
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]} />
       <PageHero
         eyebrow="Services"
         title="Every Piece of Your Revenue Cycle, One Accountable Team"

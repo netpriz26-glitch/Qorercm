@@ -4,8 +4,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { ButtonLink } from "@/components/ui/Button";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { caseStudies } from "@/lib/content/case-studies";
 import { siteConfig } from "@/lib/site-config";
 
@@ -18,11 +17,8 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Case Studies", path: "/case-studies" },
-        ])}
+      <Breadcrumbs
+        items={[{ name: "Home", path: "/" }, { name: "Case Studies", path: "/case-studies" }]}
       />
       <PageHero
         eyebrow="Case Studies"

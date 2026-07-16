@@ -6,8 +6,7 @@ import { TiltCard } from "@/components/ui/TiltCard";
 import { Reveal } from "@/components/motion/Reveal";
 import { Scene3D } from "@/components/three/Scene3D";
 import { ContactForm } from "@/components/ContactForm";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -46,12 +45,7 @@ const contactCards = [
 export default function ContactPage() {
   return (
     <>
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Contact", path: "/contact" },
-        ])}
-      />
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
       <PageHero
         eyebrow="Contact"
         title="Let's Talk About Your Revenue Cycle"

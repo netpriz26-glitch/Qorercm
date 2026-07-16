@@ -11,7 +11,7 @@ import {
   GoogleTagManagerNoScript,
 } from "@/components/GoogleTagManager";
 import { JsonLd } from "@/components/JsonLd";
-import { organizationSchema } from "@/lib/schema";
+import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 const geistSans = Geist({
@@ -74,6 +74,7 @@ export default function RootLayout({
         <ConsentDefaults />
         <GoogleTagManagerScript />
         <JsonLd data={organizationSchema()} />
+        <JsonLd data={localBusinessSchema()} />
       </head>
       <body className="flex min-h-full flex-col bg-white text-slate-900">
         <a href="#main-content" className="skip-link">
