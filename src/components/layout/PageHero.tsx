@@ -23,7 +23,7 @@ export function PageHero({
           </p>
         </Reveal>
         <Reveal variant="fadeUp" delay={0.08}>
-          <h1 className="text-hero mt-5 font-heading font-extrabold tracking-tight">{title}</h1>
+          <h1 className="heading-hero mt-5 font-heading font-extrabold tracking-tight">{title}</h1>
         </Reveal>
         <Reveal variant="fadeUp" delay={0.14}>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-300">

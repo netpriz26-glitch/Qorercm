@@ -32,7 +32,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal variant="fadeUp" delay={0.08}>
-            <h1 className="text-hero mt-5 font-heading font-extrabold tracking-tight">
+            <h1 className="heading-hero mt-5 font-heading font-extrabold tracking-tight">
               <span className="text-gradient-brand">Stop Losing Revenue</span>{" "}
               to Billing Errors
             </h1>

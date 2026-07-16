@@ -5,22 +5,16 @@ import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { Icon3DTile } from "@/components/ui/Icon3DTile";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function Services() {
   return (
     <section className="bg-slate-50 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal variant="fadeUp">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Full-Service Revenue Cycle Management
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              One accountable team across the entire billing lifecycle — from claim submission to
-              final payment.
-            </p>
-          </div>
-        </Reveal>
+        <SectionHeader
+          title="Full-Service Revenue Cycle Management"
+          description="One accountable team across the entire billing lifecycle — from claim submission to final payment."
+        />
 
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (

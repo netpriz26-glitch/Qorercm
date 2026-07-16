@@ -181,7 +181,7 @@ html {
    values per component.
 ------------------------------------------------------------------------ */
 
-@utility text-hero {
+@utility heading-hero {
   font-size: 2.75rem;
   line-height: 1.08;
 
@@ -194,7 +194,7 @@ html {
   }
 }
 
-@utility text-h2 {
+@utility heading-h2 {
   font-size: 1.875rem;
   line-height: 1.15;
 

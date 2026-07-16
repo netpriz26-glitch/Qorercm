@@ -1,6 +1,7 @@
 import { JsonLd } from "@/components/JsonLd";
 import { faqSchema } from "@/lib/schema";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const faqs = [
   {
@@ -35,11 +36,7 @@ export function FAQ() {
     <section className="bg-slate-50 py-16 sm:py-20">
       <JsonLd data={faqSchema(faqs)} />
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <Reveal variant="fadeUp">
-          <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Frequently Asked Questions
-          </h2>
-        </Reveal>
+        <SectionHeader title="Frequently Asked Questions" />
 
         <Reveal variant="fadeUp" delay={0.1}>
           <div className="mt-10 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">

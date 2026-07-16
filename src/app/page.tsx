@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
+import { LogoCloud } from "@/components/LogoCloud";
 import { TrustBar } from "@/components/TrustBar";
 import { ProblemBenefits } from "@/components/ProblemBenefits";
 import { Services } from "@/components/Services";
+import { ServiceSpotlights } from "@/components/ServiceSpotlights";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Stats } from "@/components/Stats";
+import { CaseStudiesPreview } from "@/components/CaseStudiesPreview";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { InsightsPreview } from "@/components/InsightsPreview";
@@ -26,11 +29,14 @@ export default function Home() {
     <>
       <JsonLd data={serviceSchema()} />
       <Hero />
+      <LogoCloud />
       <TrustBar />
       <ProblemBenefits />
       <Services />
+      <ServiceSpotlights />
       <HowItWorks />
       <Stats />
+      <CaseStudiesPreview />
       <Testimonials />
       <FAQ />
       <InsightsPreview />

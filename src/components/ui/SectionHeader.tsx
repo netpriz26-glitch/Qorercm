@@ -40,7 +40,7 @@ export function SectionHeader({
       <Reveal variant="fadeUp" delay={eyebrow ? 0.08 : 0}>
         <h2
           className={cn(
-            "text-h2 font-heading font-bold tracking-tight",
+            "heading-h2 font-heading font-bold tracking-tight",
             eyebrow && "mt-4",
             tone === "dark" ? "text-white" : "text-slate-900"
           )}
