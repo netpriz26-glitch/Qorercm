@@ -41,6 +41,10 @@ export function TestimonialCarousel() {
 
   return (
     <div>
+      <p className="sr-only" role="status" aria-live="polite">
+        Showing testimonial {active + 1} of {testimonials.length}: {testimonials[active].name},{" "}
+        {testimonials[active].org}
+      </p>
       <div
         ref={trackRef}
         onScroll={handleScroll}
