@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { ButtonLink } from "@/components/ui/Button";
 import { TiltCard } from "@/components/ui/TiltCard";
@@ -40,21 +42,27 @@ export default function ServicesPage() {
         <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <StaggerItem key={service.slug} id={service.slug} className="scroll-mt-24">
-              <TiltCard tone="plain" className="h-full border border-slate-200 bg-white p-6">
-                <Icon3DTile icon={service.icon} />
-                <h2 className="mt-4 text-lg font-semibold text-slate-900">{service.name}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {service.description}
-                </p>
-                <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4">
-                  {service.bullets.map((bullet) => (
-                    <li key={bullet} className="flex gap-2 text-xs leading-relaxed text-slate-600">
-                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-500" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </TiltCard>
+              <Link href={`/services/${service.slug}`} className="block h-full">
+                <TiltCard tone="plain" className="h-full border border-slate-200 bg-white p-6">
+                  <Icon3DTile icon={service.icon} />
+                  <h2 className="mt-4 text-lg font-semibold text-slate-900">{service.name}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    {service.description}
+                  </p>
+                  <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4">
+                    {service.bullets.map((bullet) => (
+                      <li key={bullet} className="flex gap-2 text-xs leading-relaxed text-slate-600">
+                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-500" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-4 inline-flex items-center gap-1.5 border-t border-slate-100 pt-4 text-sm font-semibold text-brand-700">
+                    Learn more
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                </TiltCard>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerGroup>

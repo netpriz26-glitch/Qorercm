@@ -9,6 +9,9 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+export type DashboardStat = { value: string; label: string };
+export type WorkflowStep = { number: string; title: string; description: string };
+
 export type Service = {
   slug: string;
   name: string;
@@ -16,6 +19,8 @@ export type Service = {
   description: string;
   icon: LucideIcon;
   bullets: string[];
+  dashboard: { stats: DashboardStat[]; footerItems?: string[] };
+  workflow: WorkflowStep[];
 };
 
 export const services: Service[] = [
@@ -33,6 +38,32 @@ export const services: Service[] = [
       "Monthly performance reviews with your account manager",
       "Custom workflows for your specialty and payer mix",
     ],
+    dashboard: {
+      stats: [
+        { value: "1", label: "Dedicated team, zero handoffs" },
+        { value: "100%", label: "Billing lifecycle ownership" },
+      ],
+      footerItems: ["Eligibility verified in real time", "Monthly account review scheduled"],
+    },
+    workflow: [
+      {
+        number: "01",
+        title: "Audit & Map",
+        description: "We audit your current billing lifecycle and map every handoff point.",
+      },
+      {
+        number: "02",
+        title: "Stand Up the Team",
+        description:
+          "A dedicated team is assigned and onboarded to your specialty and payer mix.",
+      },
+      {
+        number: "03",
+        title: "Manage & Report",
+        description:
+          "Ongoing management with transparent monthly reporting on every metric that matters.",
+      },
+    ],
   },
   {
     slug: "medical-billing-coding",
@@ -48,6 +79,30 @@ export const services: Service[] = [
       "Payer-specific edits applied pre-submission",
       "Clean-claim rate reporting",
     ],
+    dashboard: {
+      stats: [
+        { value: "99.2%", label: "Coding accuracy" },
+        { value: "<24h", label: "Avg. turnaround time" },
+      ],
+      footerItems: ["Claim #55210 — coded & queued", "Charge audit complete"],
+    },
+    workflow: [
+      {
+        number: "01",
+        title: "Documentation Review",
+        description: "Certified coders review clinical documentation against payer-specific rules.",
+      },
+      {
+        number: "02",
+        title: "Clean Claim Submission",
+        description: "Claims are scrubbed and submitted right the first time.",
+      },
+      {
+        number: "03",
+        title: "Accuracy Reporting",
+        description: "Clean-claim rate and coding accuracy tracked and reported monthly.",
+      },
+    ],
   },
   {
     slug: "denial-management",
@@ -61,6 +116,30 @@ export const services: Service[] = [
       "Timely, evidence-backed appeals",
       "Payer escalation for repeat issues",
       "Prevention feedback loop into coding and intake",
+    ],
+    dashboard: {
+      stats: [
+        { value: "<5%", label: "Denial rate on managed claims" },
+        { value: "92%", label: "Appeal win rate" },
+      ],
+      footerItems: ["Denial #4471 — root cause found", "Appeal #4472 — submitted"],
+    },
+    workflow: [
+      {
+        number: "01",
+        title: "Root-Cause Analysis",
+        description: "Every denial is diagnosed for its true cause, not just resubmitted.",
+      },
+      {
+        number: "02",
+        title: "Timely Appeals",
+        description: "Evidence-backed appeals filed within payer timely-filing windows.",
+      },
+      {
+        number: "03",
+        title: "Prevention Loop",
+        description: "Denial trends feed back into coding and intake to stop repeat denials.",
+      },
     ],
   },
   {
@@ -76,6 +155,31 @@ export const services: Service[] = [
       "Re-credentialing tracking and alerts",
       "Panel status monitoring",
     ],
+    dashboard: {
+      stats: [
+        { value: "45d", label: "Avg. enrollment time" },
+        { value: "100%", label: "Panels actively monitored" },
+      ],
+      footerItems: ["Dr. Patel — re-credentialing due in 30d", "CAQH profile — up to date"],
+    },
+    workflow: [
+      {
+        number: "01",
+        title: "Initial Enrollment",
+        description: "Provider applications submitted and tracked across every payer.",
+      },
+      {
+        number: "02",
+        title: "CAQH Maintenance",
+        description: "Profiles kept current so applications never stall on missing data.",
+      },
+      {
+        number: "03",
+        title: "Ongoing Monitoring",
+        description:
+          "Re-credentialing deadlines and panel status tracked with proactive alerts.",
+      },
+    ],
   },
   {
     slug: "ar-recovery",
@@ -89,6 +193,31 @@ export const services: Service[] = [
       "Payer follow-up on stalled claims",
       "Old-claims recovery projects",
       "Write-off review before any balance is closed",
+    ],
+    dashboard: {
+      stats: [
+        { value: "$180k", label: "Recovered this quarter" },
+        { value: "22", label: "Claims still open >120d" },
+      ],
+      footerItems: ["Claim #38821 — payer follow-up sent", "Write-off review — 14 claims cleared"],
+    },
+    workflow: [
+      {
+        number: "01",
+        title: "Aging Triage",
+        description: "Every claim over 90/120/180 days is triaged and prioritized.",
+      },
+      {
+        number: "02",
+        title: "Payer Follow-Up",
+        description: "A dedicated team works stalled claims directly with payers.",
+      },
+      {
+        number: "03",
+        title: "Recovery or Review",
+        description:
+          "Correctable claims are re-filed; true write-offs get a final review before closing.",
+      },
     ],
   },
   {
@@ -104,6 +233,30 @@ export const services: Service[] = [
       "Days-in-A/R and clean-claim-rate tracking",
       "Custom reporting on request",
     ],
+    dashboard: {
+      stats: [
+        { value: "34d", label: "Avg. days in A/R" },
+        { value: "98%", label: "Clean claim rate" },
+      ],
+      footerItems: ["Monthly report generated", "Payer benchmark updated"],
+    },
+    workflow: [
+      {
+        number: "01",
+        title: "Data Consolidation",
+        description: "Collections, denials, and A/R data pulled into one dashboard.",
+      },
+      {
+        number: "02",
+        title: "Monthly Reporting",
+        description: "Transparent reports delivered on a fixed monthly cadence.",
+      },
+      {
+        number: "03",
+        title: "Benchmarking",
+        description: "Payer performance benchmarked so you know where you stand.",
+      },
+    ],
   },
   {
     slug: "ai-automation",
@@ -117,6 +270,30 @@ export const services: Service[] = [
       "AI-assisted claim scrubbing before submission",
       "Predictive denial-risk scoring",
       "Human review on every flagged claim — never fully automated decisions",
+    ],
+    dashboard: {
+      stats: [
+        { value: "3.2k", label: "Claims auto-scrubbed / mo" },
+        { value: "41%", label: "Denial risk flagged pre-submit" },
+      ],
+      footerItems: ["Eligibility check automated", "High-risk claim flagged for review"],
+    },
+    workflow: [
+      {
+        number: "01",
+        title: "Automated Checks",
+        description: "Eligibility verification and claim scrubbing run automatically.",
+      },
+      {
+        number: "02",
+        title: "Risk Scoring",
+        description: "Predictive denial-risk scoring flags claims before submission.",
+      },
+      {
+        number: "03",
+        title: "Human Review",
+        description: "Every flagged claim gets human review — no fully automated decisions.",
+      },
     ],
   },
 ];

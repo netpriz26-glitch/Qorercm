@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { blogPosts } from "@/lib/content/blog";
+import { services } from "@/lib/content/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -26,7 +27,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.publishedAt),
   }));
 
-  return [...staticRoutes, ...blogRoutes].map((route) => ({
+  const serviceRoutes = services.map((service) => ({
+    path: `/services/${service.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+    lastModified: now,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes].map((route) => ({
     url: `${siteConfig.url}${route.path}`,
     lastModified: route.lastModified,
     changeFrequency: route.changeFrequency,
