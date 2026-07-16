@@ -6,7 +6,7 @@ export const buttonStyles = cva(
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-r from-brand-500 to-accent-500 text-white shadow-[0_8px_30px_rgba(20,184,166,0.35)] hover:shadow-[0_12px_40px_rgba(20,184,166,0.5)] hover:scale-[1.02] focus-visible:outline-brand-500",
+          "bg-gradient-to-r from-brand-500 to-accent-500 text-white shadow-[0_8px_30px_rgba(59,130,246,0.35)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.5)] hover:scale-[1.02] focus-visible:outline-brand-500",
         secondary:
           "glass-light text-slate-900 hover:bg-white/90 hover:scale-[1.02] focus-visible:outline-brand-500",
         "secondary-dark":

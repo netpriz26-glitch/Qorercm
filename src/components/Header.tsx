@@ -19,7 +19,7 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-black text-white shadow-[0_4px_16px_rgba(20,184,166,0.4)]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-black text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)]">
             Q
           </span>
           {siteConfig.name}

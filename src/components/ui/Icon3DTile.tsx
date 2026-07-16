@@ -10,7 +10,7 @@ import type { LucideIcon } from "lucide-react";
 export function Icon3DTile({ icon: Icon }: { icon: LucideIcon }) {
   return (
     <div className="group/tile [perspective:600px]">
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-400 to-accent-500 shadow-[0_10px_30px_rgba(20,184,166,0.35)] transition-transform duration-500 [transform-style:preserve-3d] group-hover/tile:[transform:rotateY(18deg)_rotateX(-10deg)_translateZ(6px)]">
+      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-400 to-accent-500 shadow-[0_10px_30px_rgba(96,165,250,0.35)] transition-transform duration-500 [transform-style:preserve-3d] group-hover/tile:[transform:rotateY(18deg)_rotateX(-10deg)_translateZ(6px)]">
         <Icon className="h-6 w-6 text-white" aria-hidden="true" />
       </div>
     </div>
