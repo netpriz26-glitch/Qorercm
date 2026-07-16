@@ -3,7 +3,7 @@ import { Geist, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { StickyCTA } from "@/components/StickyCTA";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 import {
   ConsentDefaults,
@@ -85,7 +85,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <StickyMobileCTA />
+        <StickyCTA />
         <CookieConsentBanner />
       </body>
     </html>

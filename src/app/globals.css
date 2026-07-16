@@ -156,6 +156,25 @@ html {
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 /* ---------------------------------------------------------------------
    Type scale — hero and section-heading sizes defined once so every
    headline consumes the same scale instead of duplicating arbitrary

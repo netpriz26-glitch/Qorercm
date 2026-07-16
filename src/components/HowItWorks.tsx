@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
+import { Timeline, type TimelineStep } from "@/components/ui/Timeline";
 
-const steps = [
+const steps: TimelineStep[] = [
   {
     number: "01",
     title: "Free Revenue Cycle Audit",
@@ -43,15 +43,9 @@ export function HowItWorks() {
         </div>
       </Reveal>
 
-      <StaggerGroup className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {steps.map((step) => (
-          <StaggerItem key={step.number} className="relative">
-            <span className="text-4xl font-black text-brand-100">{step.number}</span>
-            <h3 className="mt-2 text-base font-semibold text-slate-900">{step.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.description}</p>
-          </StaggerItem>
-        ))}
-      </StaggerGroup>
+      <div className="mt-14">
+        <Timeline steps={steps} />
+      </div>
     </section>
   );
 }

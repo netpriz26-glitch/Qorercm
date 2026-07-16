@@ -1,8 +1,8 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, TrendingUp } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { MeshBackground } from "@/components/backgrounds/MeshBackground";
-import { DashboardMockup } from "@/components/ui/DashboardMockup";
+import { MockupPanel } from "@/components/ui/MockupPanel";
 import { siteConfig } from "@/lib/site-config";
 
 const heroPoints = [
@@ -85,7 +85,14 @@ export function Hero() {
         <Reveal variant="fadeLeft" delay={0.15}>
           <div className="relative flex items-center justify-center py-6 lg:py-0">
             <div className="animate-float relative z-10 w-full max-w-md">
-              <DashboardMockup />
+              <MockupPanel
+                title="Revenue Cycle Overview"
+                stats={[
+                  { value: "98%", label: "Clean claim rate" },
+                  { value: "$412k", label: "Collected this month", trendIcon: TrendingUp },
+                ]}
+                footerItems={["Claim #48213 — approved", "Denial appeal #103 — submitted"]}
+              />
             </div>
           </div>
         </Reveal>
