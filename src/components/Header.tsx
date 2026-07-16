@@ -13,13 +13,13 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur-xl">
-      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <header className="fixed inset-x-0 top-4 z-40 px-4 sm:px-6">
+      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-slate-900/[0.08] bg-white/70 px-4 py-2.5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:px-5">
         <Link
           href="/"
           className="flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-black text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-black text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)]">
             Q
           </span>
           {siteConfig.name}
@@ -31,7 +31,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                "rounded-full px-3 py-2 text-sm font-medium transition-colors",
                 pathname === item.href
                   ? "text-brand-700"
                   : "text-slate-600 hover:text-slate-900"
@@ -50,7 +50,11 @@ export function Header() {
             <Phone className="h-4 w-4" aria-hidden="true" />
             {siteConfig.contact.phone}
           </a>
-          <ButtonLink href="/#audit-form" size="md" className="hidden sm:inline-flex">
+          <ButtonLink
+            href="/#audit-form"
+            size="md"
+            className="hidden rounded-full sm:inline-flex"
+          >
             {siteConfig.offer.ctaLabel}
           </ButtonLink>
           <MobileMenu />

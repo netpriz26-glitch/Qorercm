@@ -32,9 +32,9 @@ export function MobileMenu() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-x-0 top-full overflow-hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl"
+            className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-3xl border border-slate-900/[0.08] bg-white/90 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl"
           >
-            <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6">
+            <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-3 py-3">
               {mainNav.map((item) => (
                 <Link
                   key={item.href}
