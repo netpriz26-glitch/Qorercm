@@ -1,17 +1,16 @@
 "use client";
 
-import { useActionState, useId } from "react";
-import { useFormStatus } from "react-dom";
-import { submitLeadForm } from "@/app/actions";
-import { leadFormInitialState } from "@/lib/lead-schema";
+import { useId, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { forwardLead, LEAD_STORAGE_KEY } from "@/lib/client-lead-submit";
+import { leadFormInitialState, leadFormSchema, type LeadFormValues } from "@/lib/lead-schema";
 import { siteConfig } from "@/lib/site-config";
 import { ShieldCheck } from "lucide-react";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { buttonStyles } from "@/components/ui/button-styles";
 import { cn } from "@/lib/cn";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
+function SubmitButton({ pending }: { pending: boolean }) {
   return (
     <Magnetic className="w-full">
       <button
@@ -32,9 +31,59 @@ export function LeadForm({
   compact?: boolean;
   tone?: "light" | "dark";
 }) {
-  const [state, formAction] = useActionState(submitLeadForm, leadFormInitialState);
+  const [state, setState] = useState(leadFormInitialState);
+  const [pending, setPending] = useState(false);
+  const router = useRouter();
   const idPrefix = useId();
   const isDark = tone === "dark";
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const raw = {
+      fullName: String(formData.get("fullName") ?? ""),
+      practiceName: String(formData.get("practiceName") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      companyWebsite: String(formData.get("companyWebsite") ?? ""),
+    };
+
+    const parsed = leadFormSchema.safeParse(raw);
+
+    if (!parsed.success) {
+      const fieldErrors: Partial<Record<keyof LeadFormValues, string>> = {};
+      for (const issue of parsed.error.issues) {
+        const key = issue.path[0] as keyof LeadFormValues | undefined;
+        if (key && key !== "companyWebsite" && !fieldErrors[key]) {
+          fieldErrors[key] = issue.message;
+        }
+      }
+      setState({ status: "error", message: "Please fix the highlighted fields and try again.", fieldErrors, values: raw });
+      return;
+    }
+
+    // Honeypot tripped: pretend to succeed without doing any work.
+    if (parsed.data.companyWebsite) {
+      router.push("/thank-you");
+      return;
+    }
+
+    setPending(true);
+    try {
+      await forwardLead(parsed.data, "qorercm-landing-page");
+      sessionStorage.setItem(LEAD_STORAGE_KEY, JSON.stringify(parsed.data));
+      router.push("/thank-you");
+    } catch (error) {
+      console.error("[lead] Failed to forward lead:", error);
+      setState({
+        status: "error",
+        message: "Something went wrong on our end. Please try again, or call us directly.",
+        values: raw,
+      });
+    } finally {
+      setPending(false);
+    }
+  }
 
   const fieldClass = cn(
     "w-full rounded-lg border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/40",
@@ -45,7 +94,7 @@ export function LeadForm({
   const errorClass = cn("mt-1 text-sm", isDark ? "text-red-400" : "text-red-600");
 
   return (
-    <form action={formAction} noValidate className="w-full space-y-4">
+    <form onSubmit={handleSubmit} noValidate className="w-full space-y-4">
       {!compact && (
         <div className="space-y-1">
           <h3 className={cn("text-xl font-bold", isDark ? "text-white" : "text-slate-900")}>
@@ -180,7 +229,7 @@ export function LeadForm({
         {state.status === "error" ? state.message : ""}
       </p>
 
-      <SubmitButton />
+      <SubmitButton pending={pending} />
 
       <p
         className={cn(

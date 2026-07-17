@@ -1,7 +1,5 @@
 import { z } from "zod";
 
-export const LEAD_COOKIE_NAME = "qorercm_lead";
-
 export const leadFormSchema = z.object({
   fullName: z.string().trim().min(2, "Enter your full name.").max(100),
   practiceName: z.string().trim().min(2, "Enter your practice or clinic name.").max(150),
