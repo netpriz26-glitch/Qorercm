@@ -9,7 +9,7 @@ import { mainNav } from "@/lib/content/nav";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
 
-export function MobileMenu() {
+export function MobileMenu({ light = false }: { light?: boolean }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -20,7 +20,10 @@ export function MobileMenu() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
-        className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100"
+        className={cn(
+          "flex h-10 w-10 items-center justify-center rounded-lg transition-colors",
+          light ? "text-white hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"
+        )}
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>

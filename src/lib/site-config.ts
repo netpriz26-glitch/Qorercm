@@ -18,21 +18,21 @@ export const siteConfig = {
   },
 
   contact: {
-    phone: "+1 (555) 010-1234",
+    phone: "+1 (647) 444-4444",
     phoneHref: "+15550101234",
-    email: "hello@qorercm.com",
+    email: "info@qorercm.com",
     address: {
-      line1: "1201 Medical Center Drive, Suite 400",
-      city: "Dallas",
-      state: "TX",
-      zip: "75201",
+      line1: "300 Spectrum Center Drive Suite 400",
+      city: "Irvine",
+      state: "CA",
+      zip: "92618",
       country: "USA",
     },
     // Approximate downtown Dallas coordinates — replace with the real
     // office location before launch.
     geo: {
-      latitude: 32.7767,
-      longitude: -96.797,
+      latitude: 33.6538734,
+      longitude: -117.7472945,
     },
     openingHours: ["Mo-Fr 08:00-18:00"],
   },

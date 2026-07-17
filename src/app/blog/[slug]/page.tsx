@@ -63,7 +63,7 @@ export default async function BlogPostPage({
         ]}
       />
 
-      <div className="relative overflow-hidden bg-ink-950 py-14 text-white sm:py-20">
+      <div className="relative overflow-hidden bg-ink-950 pb-14 pt-32 text-white sm:pb-20 sm:pt-40">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <Link
             href="/blog"

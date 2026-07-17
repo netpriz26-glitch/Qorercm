@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { LogoCloud } from "@/components/LogoCloud";
-import { TrustBar } from "@/components/TrustBar";
 import { ProblemBenefits } from "@/components/ProblemBenefits";
 import { Services } from "@/components/Services";
 import { ServiceSpotlights } from "@/components/ServiceSpotlights";
@@ -30,7 +29,6 @@ export default function Home() {
       <JsonLd data={serviceSchema()} />
       <Hero />
       <LogoCloud />
-      <TrustBar />
       <ProblemBenefits />
       <Services />
       <ServiceSpotlights />

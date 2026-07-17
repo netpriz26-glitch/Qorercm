@@ -1,20 +1,28 @@
 import type { ReactNode } from "react";
 import { MeshBackground } from "@/components/backgrounds/MeshBackground";
 import { Reveal } from "@/components/motion/Reveal";
+import { cn } from "@/lib/cn";
 
 export function PageHero({
   eyebrow,
   title,
   description,
   children,
+  fullHeight = false,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   children?: ReactNode;
+  fullHeight?: boolean;
 }) {
   return (
-    <section className="relative overflow-hidden bg-ink-950 py-16 text-white sm:py-24">
+    <section
+      className={cn(
+        "relative overflow-hidden bg-ink-950 pb-16 pt-32 text-white sm:pb-24 sm:pt-40",
+        fullHeight && "flex min-h-svh items-center"
+      )}
+    >
       <MeshBackground />
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <Reveal variant="fadeUp">

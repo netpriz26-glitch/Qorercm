@@ -1,9 +1,9 @@
-import { CheckCircle2, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, ShieldCheck, BadgeCheck, Lock, Award } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { MeshBackground } from "@/components/backgrounds/MeshBackground";
-import { MockupPanel } from "@/components/ui/MockupPanel";
 import { siteConfig } from "@/lib/site-config";
+import heroDoctor from "@/assets/images/hero-doctor.png";
 
 const heroPoints = [
   "Free, no-obligation revenue audit",
@@ -11,20 +11,32 @@ const heroPoints = [
   "No long-term contract required",
 ];
 
-const clientWordmarks = [
-  "Multi-Specialty Groups",
-  "Family Care Networks",
-  "Surgical Partners",
-  "Outpatient Clinics",
+const trustBadges = [
+  { icon: ShieldCheck, label: "HIPAA Compliant" },
+  { icon: BadgeCheck, label: "AAPC Certified Coders" },
+  { icon: Lock, label: "SOC 2–Aligned Data Security" },
+  { icon: Award, label: "150+ Practices Served" },
 ];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-ink-950 pb-20 pt-14 text-white sm:pb-28 sm:pt-20">
-      <MeshBackground />
+    <section className="relative flex min-h-svh items-center overflow-hidden bg-ink-950 text-white">
+      <div className="absolute inset-x-0 bottom-0 top-20 sm:top-24" aria-hidden="true">
+        <Image
+          src={heroDoctor}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[68%_top]"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#070b13_0%,rgba(7,11,19,0.96)_22%,rgba(7,11,19,0.88)_40%,rgba(7,11,19,0.62)_52%,rgba(7,11,19,0.32)_64%,rgba(7,11,19,0.1)_76%,transparent_88%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(7,11,19,0.85)_0%,rgba(7,11,19,0.5)_9%,rgba(7,11,19,0.18)_20%,transparent_32%)]" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-ink-950 to-transparent" />
+      </div>
 
-      <div className="relative mx-auto grid max-w-6xl gap-14 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10">
-        <div>
+      <div className="relative mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pt-32">
+        <div className="max-w-2xl">
           <Reveal variant="fadeUp">
             <p className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-300">
               Medical Billing &amp; Revenue Cycle Management
@@ -65,36 +77,17 @@ export function Hero() {
               </ButtonLink>
             </div>
           </Reveal>
-
-          <Reveal variant="fadeUp" delay={0.32}>
-            <div className="mt-10 border-t border-white/10 pt-8">
-              <p className="text-xs uppercase tracking-wide text-slate-500">
-                Trusted by teams at
-              </p>
-              <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-                {clientWordmarks.map((name) => (
-                  <span key={name} className="text-sm font-semibold text-slate-500">
-                    {name}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Reveal>
         </div>
 
-        <Reveal variant="fadeLeft" delay={0.15}>
-          <div className="relative flex items-center justify-center py-6 lg:py-0">
-            <div className="animate-float relative z-10 w-full max-w-md">
-              <MockupPanel
-                title="Revenue Cycle Overview"
-                stats={[
-                  { value: "98%", label: "Clean claim rate" },
-                  { value: "$412k", label: "Collected this month", trendIcon: TrendingUp },
-                ]}
-                footerItems={["Claim #48213 — approved", "Denial appeal #103 — submitted"]}
-              />
-            </div>
-          </div>
+        <Reveal variant="fadeUp" delay={0.32}>
+          <ul className="mt-8 flex max-w-4xl flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6">
+            {trustBadges.map(({ icon: Icon, label }) => (
+              <li key={label} className="flex items-center gap-2.5 text-sm font-semibold text-slate-300">
+                <Icon className="h-5 w-5 shrink-0 text-brand-400" aria-hidden="true" />
+                {label}
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>

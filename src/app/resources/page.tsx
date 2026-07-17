@@ -21,6 +21,7 @@ export default function ResourcesPage() {
         eyebrow="Resources"
         title="Guides for Running a Healthier Revenue Cycle"
         description="Practical guides and checklists from our team — request access and we'll send them directly."
+        fullHeight
       />
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
