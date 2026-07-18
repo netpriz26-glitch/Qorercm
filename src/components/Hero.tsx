@@ -26,7 +26,8 @@ export function Hero() {
           src={heroDoctor}
           alt=""
           fill
-          priority
+          preload
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover object-[68%_top]"
         />
