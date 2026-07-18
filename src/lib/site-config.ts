@@ -1,7 +1,7 @@
 // Placeholder business details — replace every value before launch.
 export const siteConfig = {
   name: "QoreRCM",
-  legalName: "QoreRCM LLC",
+  legalName: "QoreRCM",
   tagline: "Revenue Cycle Management for Healthcare Practices",
   description:
     "QoreRCM helps healthcare practices reduce claim denials, recover lost revenue, and get paid faster with a dedicated U.S.-based medical billing team.",
