@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HeartHandshake, Target, ShieldCheck, Users } from "lucide-react";
+import { HeartHandshake, Target, ShieldCheck, Users, Quote } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { ButtonLink } from "@/components/ui/Button";
 import { TiltCard } from "@/components/ui/TiltCard";
@@ -7,7 +7,6 @@ import { Icon3DTile } from "@/components/ui/Icon3DTile";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
-import { Scene3D } from "@/components/three/Scene3D";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/site-config";
 
@@ -86,14 +85,21 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal variant="fadeLeft" delay={0.1}>
-            <div className="relative flex items-center justify-center rounded-[24px] bg-ink-950 p-8">
-              <Scene3D variant="orbit" className="h-72 w-full" />
+            <div className="rounded-[24px] border border-slate-200 bg-surface-50 p-8">
+              <Quote className="h-8 w-8 text-trust-300" aria-hidden="true" />
+              <p className="mt-4 text-lg font-medium leading-relaxed text-slate-900">
+                &ldquo;We built {siteConfig.name} to be the revenue cycle team we always wished we
+                had — one that treats every claim like it&apos;s the only one that matters.&rdquo;
+              </p>
+              <p className="mt-4 text-sm font-semibold text-slate-500">
+                {siteConfig.name} Leadership Team
+              </p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-ink-950 py-14">
+      <section className="relative overflow-hidden bg-trust-900 py-14">
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <StaggerGroup className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {orgStats.map((stat) => (
@@ -103,7 +109,7 @@ export default function AboutPage() {
                   suffix={stat.suffix}
                   className="text-3xl font-extrabold text-white sm:text-4xl"
                 />
-                <div className="mt-1.5 text-sm text-brand-200">{stat.label}</div>
+                <div className="mt-1.5 text-sm text-trust-200">{stat.label}</div>
               </StaggerItem>
             ))}
           </StaggerGroup>

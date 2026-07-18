@@ -22,23 +22,15 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-3 z-40 px-4 sm:px-6">
-      <div
-        className={cn(
-          "relative mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full px-4 py-2 backdrop-blur-[10px] transition-all duration-300 sm:px-5",
-          scrolled
-            ? "border border-slate-900/[0.08] bg-white/80 shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
-            : "border border-white/10 bg-white/[0.06] shadow-none"
-        )}
-      >
-        <Link
-          href="/"
-          className={cn(
-            "flex items-center gap-2 text-lg font-bold tracking-tight transition-colors",
-            scrolled ? "text-slate-900" : "text-white"
-          )}
-        >
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-black text-white shadow-[0_4px_16px_rgba(59,130,246,0.4)]">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-40 w-full border-b bg-white transition-shadow duration-200",
+        scrolled ? "border-slate-200 shadow-sm" : "border-slate-100"
+      )}
+    >
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px] lg:px-8">
+        <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-trust-600 text-sm font-black text-white">
             Q
           </span>
           {siteConfig.name}
@@ -50,14 +42,10 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-full px-3 py-2 text-sm font-medium transition-colors",
-                scrolled
-                  ? pathname === item.href
-                    ? "text-brand-700"
-                    : "text-slate-600 hover:text-slate-900"
-                  : pathname === item.href
-                    ? "text-white"
-                    : "text-white/75 hover:text-white"
+                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                pathname === item.href
+                  ? "text-trust-700"
+                  : "text-slate-600 hover:text-slate-900"
               )}
             >
               {item.label}
@@ -68,22 +56,15 @@ export function Header() {
         <div className="flex items-center gap-3">
           <a
             href={`tel:${siteConfig.contact.phoneHref}`}
-            className={cn(
-              "hidden items-center gap-1.5 text-sm font-semibold transition-colors xl:flex",
-              scrolled ? "text-slate-700 hover:text-brand-700" : "text-white/85 hover:text-white"
-            )}
+            className="hidden items-center gap-1.5 text-sm font-semibold text-slate-700 transition-colors hover:text-trust-700 xl:flex"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             {siteConfig.contact.phone}
           </a>
-          <ButtonLink
-            href="/#audit-form"
-            size="md"
-            className="hidden rounded-full sm:inline-flex"
-          >
+          <ButtonLink href="/#audit-form" size="md" className="hidden sm:inline-flex">
             {siteConfig.offer.ctaLabel}
           </ButtonLink>
-          <MobileMenu light={!scrolled} />
+          <MobileMenu />
         </div>
       </div>
     </header>

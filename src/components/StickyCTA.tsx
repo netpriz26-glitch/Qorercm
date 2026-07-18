@@ -15,7 +15,7 @@ export function StickyCTA() {
       </a>
       <Link
         href="/#audit-form"
-        className="flex flex-1 items-center justify-center gap-1.5 bg-brand-600 py-3 text-sm font-semibold text-white"
+        className="flex flex-1 items-center justify-center gap-1.5 bg-trust-600 py-3 text-sm font-semibold text-white"
       >
         <ClipboardCheck className="h-4 w-4" aria-hidden="true" />
         Free Audit

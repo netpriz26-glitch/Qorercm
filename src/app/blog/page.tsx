@@ -29,19 +29,18 @@ export default function BlogIndexPage() {
             <StaggerItem key={post.slug}>
               <Link href={`/blog/${post.slug}`} className="block h-full">
                 <TiltCard tone="plain" className="h-full overflow-hidden border border-slate-200 bg-white">
-                  <div className="relative flex h-32 items-center justify-center bg-gradient-to-br from-brand-500 via-accent-500 to-brand-700">
+                  <div className="relative flex h-32 items-center justify-center bg-trust-600">
                     <Newspaper className="h-9 w-9 text-white/90" aria-hidden="true" />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-600">
+                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-trust-600">
                       <span>{post.category}</span>
                       <span aria-hidden="true">·</span>
                       <span>{post.readingMinutes} min read</span>
                     </div>
                     <h2 className="mt-2 text-base font-semibold text-slate-900">{post.title}</h2>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{post.excerpt}</p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700">
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-trust-700">
                       Read article
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>

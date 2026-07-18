@@ -16,12 +16,11 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-slate-800 bg-ink-950 pb-20 text-slate-300 sm:pb-10">
-      <div className="pointer-events-none absolute inset-0 bg-mesh-ink opacity-60" aria-hidden="true" />
+    <footer className="relative overflow-hidden border-t border-trust-800 bg-trust-950 pb-20 text-slate-300 sm:pb-10">
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-5">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 text-lg font-bold text-white">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-400 to-accent-400 text-sm font-black text-slate-950">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-sm font-black text-trust-800">
               Q
             </span>
             {siteConfig.legalName}
@@ -33,21 +32,21 @@ export function Footer() {
             <a
               href={siteConfig.social.linkedin}
               aria-label="QoreRCM on LinkedIn"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition hover:bg-brand-600"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-trust-500"
             >
               <LinkedInIcon className="h-4 w-4" />
             </a>
             <a
               href={siteConfig.social.facebook}
               aria-label="QoreRCM on Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition hover:bg-brand-600"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-trust-500"
             >
               <FacebookIcon className="h-4 w-4" />
             </a>
             <a
               href={siteConfig.social.twitter}
               aria-label="QoreRCM on X"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition hover:bg-brand-600"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-trust-500"
             >
               <XIcon className="h-4 w-4" />
             </a>
@@ -65,7 +64,7 @@ export function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/services" className="font-semibold text-brand-400 hover:text-brand-300">
+              <Link href="/services" className="font-semibold text-teal-accent-400 hover:text-teal-accent-500">
                 View all services →
               </Link>
             </li>
@@ -89,7 +88,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Contact</h3>
           <ul className="mt-3 space-y-2.5 text-sm text-slate-400">
             <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" aria-hidden="true" />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-teal-accent-400" aria-hidden="true" />
               <span>
                 {siteConfig.contact.address.line1}
                 <br />
@@ -98,13 +97,13 @@ export function Footer() {
               </span>
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 shrink-0 text-brand-400" aria-hidden="true" />
+              <Phone className="h-4 w-4 shrink-0 text-teal-accent-400" aria-hidden="true" />
               <a href={`tel:${siteConfig.contact.phoneHref}`} className="hover:text-white">
                 {siteConfig.contact.phone}
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="h-4 w-4 shrink-0 text-brand-400" aria-hidden="true" />
+              <Mail className="h-4 w-4 shrink-0 text-teal-accent-400" aria-hidden="true" />
               <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white">
                 {siteConfig.contact.email}
               </a>
@@ -113,7 +112,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 border-t border-slate-800 px-4 py-5 text-xs text-slate-500 sm:flex-row sm:px-6">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 border-t border-trust-800 px-4 py-5 text-xs text-slate-400 sm:flex-row sm:px-6">
         <span>
           © {year} {siteConfig.legalName}. All rights reserved.
         </span>

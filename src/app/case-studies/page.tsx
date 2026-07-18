@@ -31,12 +31,12 @@ export default function CaseStudiesPage() {
           {caseStudies.map((study) => (
             <StaggerItem key={study.slug} id={study.slug} className="scroll-mt-24">
               <TiltCard tone="plain" className="h-full border border-slate-200 bg-white p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-accent-500">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-trust-600">
                   <TrendingUp className="h-5 w-5 text-white" aria-hidden="true" />
                 </div>
                 <h2 className="mt-4 text-base font-semibold text-slate-900">{study.client}</h2>
                 <p className="text-xs text-slate-500">{study.specialty}</p>
-                <p className="mt-3 text-sm font-medium text-brand-700">{study.summary}</p>
+                <p className="mt-3 text-sm font-medium text-trust-700">{study.summary}</p>
 
                 <div className="mt-5 space-y-3 border-t border-slate-100 pt-4">
                   {study.metrics.map((metric) => (

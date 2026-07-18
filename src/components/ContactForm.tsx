@@ -9,21 +9,18 @@ import {
   type ContactFormValues,
 } from "@/lib/contact-schema";
 import { resources } from "@/lib/content/resources";
-import { Magnetic } from "@/components/ui/Magnetic";
 import { buttonStyles } from "@/components/ui/button-styles";
 import { cn } from "@/lib/cn";
 
 function SubmitButton({ pending }: { pending: boolean }) {
   return (
-    <Magnetic className="w-full">
-      <button
-        type="submit"
-        disabled={pending}
-        className={cn(buttonStyles({ variant: "primary", size: "lg" }), "w-full")}
-      >
-        {pending ? "Sending…" : "Send Message"}
-      </button>
-    </Magnetic>
+    <button
+      type="submit"
+      disabled={pending}
+      className={cn(buttonStyles({ variant: "primary", size: "lg" }), "w-full")}
+    >
+      {pending ? "Sending…" : "Send Message"}
+    </button>
   );
 }
 
@@ -84,8 +81,8 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    "w-full rounded-lg border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-slate-400 focus:border-accent-400 focus:outline-none focus:ring-2 focus:ring-brand-500/40";
-  const errorClass = "mt-1 text-sm text-red-400";
+    "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-trust-600 focus:outline-none focus:ring-2 focus:ring-trust-500/40";
+  const errorClass = "mt-1 text-sm text-red-600";
 
   return (
     <form onSubmit={handleSubmit} noValidate className="w-full space-y-4">
@@ -106,7 +103,7 @@ export function ContactForm() {
       </div>
 
       {requestedResource && (
-        <p className="rounded-lg border border-brand-400/30 bg-brand-500/10 px-3 py-2 text-xs text-brand-200">
+        <p className="rounded-lg border border-trust-200 bg-trust-50 px-3 py-2 text-xs text-trust-700">
           Requesting: <strong>{requestedResource.title}</strong>
         </p>
       )}

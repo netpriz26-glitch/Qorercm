@@ -82,7 +82,7 @@ export function TestimonialCarousel() {
                 aria-hidden="true"
                 className={cn(
                   "h-2 rounded-full transition-all",
-                  i === active ? "w-6 bg-brand-600" : "w-2 bg-slate-300"
+                  i === active ? "w-6 bg-trust-600" : "w-2 bg-slate-300"
                 )}
               />
             </button>

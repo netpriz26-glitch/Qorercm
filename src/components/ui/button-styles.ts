@@ -1,18 +1,18 @@
 import { cva } from "class-variance-authority";
 
 export const buttonStyles = cva(
-  "relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60",
+  "relative inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60",
   {
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-r from-brand-500 to-accent-500 text-white shadow-[0_8px_30px_rgba(59,130,246,0.35)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.5)] hover:scale-[1.02] focus-visible:outline-brand-500",
+          "bg-trust-600 text-white shadow-sm hover:bg-trust-700 focus-visible:outline-trust-600",
         secondary:
-          "glass-light text-slate-900 hover:bg-white/90 hover:scale-[1.02] focus-visible:outline-brand-500",
+          "border border-trust-600 bg-white text-trust-700 hover:bg-trust-50 focus-visible:outline-trust-600",
         "secondary-dark":
-          "glass text-white hover:bg-white/15 hover:scale-[1.02] focus-visible:outline-accent-400",
+          "border border-white/30 bg-transparent text-white hover:bg-white/10 focus-visible:outline-white",
         ghost:
-          "text-slate-700 hover:bg-slate-100 focus-visible:outline-brand-500",
+          "text-slate-700 hover:bg-slate-100 focus-visible:outline-trust-600",
       },
       size: {
         md: "px-5 py-2.5 text-sm",

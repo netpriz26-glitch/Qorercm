@@ -30,7 +30,7 @@ export default function ResourcesPage() {
             <StaggerItem key={resource.slug}>
               <TiltCard tone="plain" className="flex h-full flex-col border border-slate-200 bg-white p-6">
                 <Icon3DTile icon={resource.icon} />
-                <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-brand-600">
+                <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-trust-600">
                   {resource.format}
                 </span>
                 <h2 className="mt-1 text-base font-semibold text-slate-900">{resource.title}</h2>

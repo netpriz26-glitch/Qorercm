@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { Reveal } from "@/components/motion/Reveal";
 import { Scene3D } from "@/components/three/Scene3D";
-import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/site-config";
+
+const ContactForm = dynamic(() => import("@/components/ContactForm").then((m) => m.ContactForm));
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -52,11 +54,11 @@ export default function ContactPage() {
         description="Reach out directly, or send a message and a member of our team will follow up within one business day."
       />
 
-      <section className="relative overflow-hidden bg-ink-950 py-16 sm:py-20">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14">
           <div>
             <Reveal variant="fadeRight">
-              <div className="relative mb-8 hidden overflow-hidden rounded-[24px] bg-white/5 lg:block">
+              <div className="relative mb-8 hidden overflow-hidden rounded-[24px] bg-trust-900 lg:block">
                 <Scene3D variant="orbit" className="h-56 w-full" />
               </div>
             </Reveal>
@@ -64,12 +66,12 @@ export default function ContactPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {contactCards.map((card) => {
                 const Content = (
-                  <TiltCard tone="dark" className="h-full p-5">
-                    <card.icon className="h-5 w-5 text-brand-300" aria-hidden="true" />
-                    <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  <TiltCard tone="plain" className="h-full border border-slate-200 bg-white p-5">
+                    <card.icon className="h-5 w-5 text-trust-600" aria-hidden="true" />
+                    <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
                       {card.label}
                     </div>
-                    <div className="mt-1 text-sm font-medium text-white">{card.value}</div>
+                    <div className="mt-1 text-sm font-medium text-slate-900">{card.value}</div>
                   </TiltCard>
                 );
                 return (
@@ -88,9 +90,9 @@ export default function ContactPage() {
           </div>
 
           <Reveal variant="fadeLeft">
-            <div className="glass p-6 sm:p-8">
-              <h2 className="text-xl font-bold text-white">Send Us a Message</h2>
-              <p className="mt-1 text-sm text-slate-300">
+            <div className="rounded-2xl border border-slate-200 bg-surface-50 p-6 shadow-sm sm:p-8">
+              <h2 className="text-xl font-bold text-slate-900">Send Us a Message</h2>
+              <p className="mt-1 text-sm text-slate-600">
                 We&apos;ll route your message to the right person on our team.
               </p>
               <div className="mt-5">

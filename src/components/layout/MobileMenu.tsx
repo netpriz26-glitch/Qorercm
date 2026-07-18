@@ -9,7 +9,7 @@ import { mainNav } from "@/lib/content/nav";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
 
-export function MobileMenu({ light = false }: { light?: boolean }) {
+export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -20,10 +20,7 @@ export function MobileMenu({ light = false }: { light?: boolean }) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
-        className={cn(
-          "flex h-10 w-10 items-center justify-center rounded-lg transition-colors",
-          light ? "text-white hover:bg-white/10" : "text-slate-700 hover:bg-slate-100"
-        )}
+        className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 transition-colors hover:bg-slate-100"
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
@@ -35,9 +32,9 @@ export function MobileMenu({ light = false }: { light?: boolean }) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-x-0 top-full mt-2 overflow-hidden rounded-3xl border border-slate-900/[0.08] bg-white/90 shadow-[0_20px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl"
+            className="absolute inset-x-0 top-full overflow-hidden border-b border-slate-200 bg-white shadow-md"
           >
-            <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-3 py-3">
+            <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 sm:px-6 lg:px-8">
               {mainNav.map((item) => (
                 <Link
                   key={item.href}
@@ -46,7 +43,7 @@ export function MobileMenu({ light = false }: { light?: boolean }) {
                   className={cn(
                     "rounded-lg px-3 py-2.5 text-sm font-semibold",
                     pathname === item.href
-                      ? "bg-brand-50 text-brand-700"
+                      ? "bg-trust-50 text-trust-700"
                       : "text-slate-700 hover:bg-slate-50"
                   )}
                 >

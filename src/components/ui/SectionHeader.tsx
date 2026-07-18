@@ -29,8 +29,8 @@ export function SectionHeader({
             className={cn(
               "inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide",
               tone === "dark"
-                ? "border-white/15 bg-white/5 text-brand-300"
-                : "border-brand-200 bg-brand-50 text-brand-700"
+                ? "border-white/15 bg-white/5 text-trust-300"
+                : "border-trust-200 bg-trust-50 text-trust-700"
             )}
           >
             {eyebrow}

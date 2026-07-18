@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Activity, CircleCheck } from "lucide-react";
+import { cn } from "@/lib/cn";
 
 export type MockupStat = {
   value: string;
@@ -15,6 +16,7 @@ export type MockupPanelProps = {
   bars?: number[];
   footerItems?: string[];
   className?: string;
+  tone?: "light" | "dark";
 };
 
 /**
@@ -31,15 +33,31 @@ export function MockupPanel({
   bars = [38, 52, 46, 64, 58, 74, 82],
   footerItems = [],
   className,
+  tone = "dark",
 }: MockupPanelProps) {
+  const isLight = tone === "light";
+
   return (
-    <div className={`glass w-full max-w-md p-5 sm:p-6 ${className ?? ""}`}>
+    <div
+      className={cn(
+        "w-full p-5 sm:p-6",
+        isLight ? "rounded-2xl border border-slate-200 bg-white shadow-lg" : "glass",
+        className
+      )}
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Icon className="h-4 w-4 text-brand-300" aria-hidden="true" />
-          <span className="text-sm font-semibold text-white">{title}</span>
+          <Icon className={cn("h-4 w-4", isLight ? "text-trust-600" : "text-brand-300")} aria-hidden="true" />
+          <span className={cn("text-sm font-semibold", isLight ? "text-slate-900" : "text-white")}>
+            {title}
+          </span>
         </div>
-        <span className="rounded-full bg-brand-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-brand-300">
+        <span
+          className={cn(
+            "rounded-full px-2.5 py-0.5 text-[11px] font-semibold",
+            isLight ? "bg-trust-50 text-trust-700" : "bg-brand-500/20 text-brand-300"
+          )}
+        >
           {liveLabel}
         </span>
       </div>
@@ -47,14 +65,30 @@ export function MockupPanel({
       {stats.length > 0 && (
         <div className="mt-5 grid grid-cols-2 gap-3">
           {stats.map((stat) => (
-            <div key={stat.label} className="rounded-xl border border-white/10 bg-white/5 p-3">
-              <div className="flex items-center gap-1 text-2xl font-bold text-white">
+            <div
+              key={stat.label}
+              className={cn(
+                "rounded-xl border p-3",
+                isLight ? "border-slate-100 bg-slate-50" : "border-white/10 bg-white/5"
+              )}
+            >
+              <div
+                className={cn(
+                  "flex items-center gap-1 text-2xl font-bold",
+                  isLight ? "text-slate-900" : "text-white"
+                )}
+              >
                 {stat.value}
                 {stat.trendIcon && (
-                  <stat.trendIcon className="h-3.5 w-3.5 text-brand-300" aria-hidden="true" />
+                  <stat.trendIcon
+                    className={cn("h-3.5 w-3.5", isLight ? "text-trust-600" : "text-brand-300")}
+                    aria-hidden="true"
+                  />
                 )}
               </div>
-              <div className="text-[11px] text-slate-400">{stat.label}</div>
+              <div className={cn("text-[11px]", isLight ? "text-slate-500" : "text-slate-400")}>
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
@@ -65,7 +99,10 @@ export function MockupPanel({
           {bars.map((h, i) => (
             <div
               key={i}
-              className="flex-1 rounded-t-sm bg-gradient-to-t from-brand-500/80 to-accent-400/80"
+              className={cn(
+                "flex-1 rounded-t-sm",
+                isLight ? "bg-trust-500" : "bg-gradient-to-t from-brand-500/80 to-accent-400/80"
+              )}
               style={{ height: `${h}%` }}
             />
           ))}
@@ -73,10 +110,24 @@ export function MockupPanel({
       )}
 
       {footerItems.length > 0 && (
-        <div className="mt-5 space-y-2 border-t border-white/10 pt-4">
+        <div
+          className={cn(
+            "mt-5 space-y-2 border-t pt-4",
+            isLight ? "border-slate-100" : "border-white/10"
+          )}
+        >
           {footerItems.map((item) => (
-            <div key={item} className="flex items-center gap-2 text-xs text-slate-300">
-              <CircleCheck className="h-3.5 w-3.5 shrink-0 text-brand-400" aria-hidden="true" />
+            <div
+              key={item}
+              className={cn(
+                "flex items-center gap-2 text-xs",
+                isLight ? "text-slate-600" : "text-slate-300"
+              )}
+            >
+              <CircleCheck
+                className={cn("h-3.5 w-3.5 shrink-0", isLight ? "text-trust-600" : "text-brand-400")}
+                aria-hidden="true"
+              />
               {item}
             </div>
           ))}

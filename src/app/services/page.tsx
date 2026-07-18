@@ -46,12 +46,12 @@ export default function ServicesPage() {
                   <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4">
                     {service.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-2 text-xs leading-relaxed text-slate-600">
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-500" />
+                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-trust-500" />
                         {bullet}
                       </li>
                     ))}
                   </ul>
-                  <span className="mt-4 inline-flex items-center gap-1.5 border-t border-slate-100 pt-4 text-sm font-semibold text-brand-700">
+                  <span className="mt-4 inline-flex items-center gap-1.5 border-t border-slate-100 pt-4 text-sm font-semibold text-trust-700">
                     Learn more
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </span>

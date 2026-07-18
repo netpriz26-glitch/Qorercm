@@ -38,7 +38,7 @@ export function ServiceSpotlights() {
                 className={reversed ? "lg:order-2" : undefined}
               >
                 <div>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-400 to-accent-500 shadow-[0_10px_30px_rgba(96,165,250,0.35)]">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-trust-600">
                     <service.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </span>
                   <h3 className="mt-5 text-2xl font-heading font-bold tracking-tight text-slate-900">
@@ -51,7 +51,7 @@ export function ServiceSpotlights() {
                     {service.bullets.slice(0, 3).map((bullet) => (
                       <li key={bullet} className="flex gap-2.5 text-sm leading-relaxed text-slate-700">
                         <CheckCircle2
-                          className="mt-0.5 h-4 w-4 shrink-0 text-brand-500"
+                          className="mt-0.5 h-4 w-4 shrink-0 text-trust-600"
                           aria-hidden="true"
                         />
                         {bullet}
@@ -60,7 +60,7 @@ export function ServiceSpotlights() {
                   </ul>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-trust-700 hover:text-trust-800"
                   >
                     Learn more<span className="sr-only"> about {service.name}</span>
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -73,8 +73,13 @@ export function ServiceSpotlights() {
                 delay={0.1}
                 className={reversed ? "lg:order-1" : undefined}
               >
-                <div className="rounded-3xl bg-ink-950 p-6 sm:p-8">
-                  <MockupPanel title={service.name} icon={service.icon} {...service.dashboard} />
+                <div className="rounded-3xl border border-slate-200 bg-surface-50 p-6 sm:p-8">
+                  <MockupPanel
+                    tone="light"
+                    title={service.name}
+                    icon={service.icon}
+                    {...service.dashboard}
+                  />
                 </div>
               </Reveal>
             </div>

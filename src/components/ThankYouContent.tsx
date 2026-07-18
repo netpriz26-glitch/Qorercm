@@ -49,8 +49,8 @@ export function ThankYouContent() {
         />
       )}
 
-      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-100">
-        <CheckCircle2 className="h-9 w-9 text-brand-700" aria-hidden="true" />
+      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-trust-100">
+        <CheckCircle2 className="h-9 w-9 text-trust-700" aria-hidden="true" />
       </span>
 
       <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -65,7 +65,7 @@ export function ThankYouContent() {
 
       <a
         href={`tel:${siteConfig.contact.phoneHref}`}
-        className="mt-8 inline-flex items-center justify-center rounded-lg bg-brand-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-700"
+        className="mt-8 inline-flex items-center justify-center rounded-lg bg-trust-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-trust-700"
       >
         Call {siteConfig.contact.phone}
       </a>

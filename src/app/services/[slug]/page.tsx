@@ -70,7 +70,7 @@ export default async function ServiceDetailPage({
                 {service.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-2.5 text-sm leading-relaxed text-slate-700">
                     <CheckCircle2
-                      className="mt-0.5 h-4 w-4 shrink-0 text-brand-500"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-trust-500"
                       aria-hidden="true"
                     />
                     {bullet}
@@ -81,8 +81,13 @@ export default async function ServiceDetailPage({
           </Reveal>
 
           <Reveal variant="fadeLeft" delay={0.1}>
-            <div className="rounded-3xl bg-ink-950 p-6 sm:p-8">
-              <MockupPanel title={service.name} icon={service.icon} {...service.dashboard} />
+            <div className="rounded-3xl border border-slate-200 bg-surface-50 p-6 sm:p-8">
+              <MockupPanel
+                tone="light"
+                title={service.name}
+                icon={service.icon}
+                {...service.dashboard}
+              />
             </div>
           </Reveal>
         </div>

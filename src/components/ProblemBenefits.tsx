@@ -1,7 +1,6 @@
 import { TrendingDown, TrendingUp } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Reveal } from "@/components/motion/Reveal";
-import { TiltCard } from "@/components/ui/TiltCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const problems = [
@@ -28,7 +27,7 @@ export function ProblemBenefits() {
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
         <Reveal variant="fadeLeft" delay={0.1}>
-          <TiltCard tone="plain" className="border border-red-100 bg-red-50/60 p-6 sm:p-8">
+          <div className="rounded-3xl border border-red-100 bg-red-50/60 p-6 shadow-sm sm:p-8">
             <div className="flex items-center gap-2 text-red-700">
               <TrendingDown className="h-5 w-5" aria-hidden="true" />
               <h3 className="text-lg font-semibold">Without dedicated RCM</h3>
@@ -41,11 +40,11 @@ export function ProblemBenefits() {
                 </li>
               ))}
             </ul>
-          </TiltCard>
+          </div>
         </Reveal>
 
         <Reveal variant="fadeRight" delay={0.1}>
-          <TiltCard tone="plain" className="border border-green-100 bg-green-50/60 p-6 sm:p-8">
+          <div className="rounded-3xl border border-green-100 bg-green-50/60 p-6 shadow-sm sm:p-8">
             <div className="flex items-center gap-2 text-green-700">
               <TrendingUp className="h-5 w-5" aria-hidden="true" />
               <h3 className="text-lg font-semibold">With {siteConfig.name}</h3>
@@ -58,7 +57,7 @@ export function ProblemBenefits() {
                 </li>
               ))}
             </ul>
-          </TiltCard>
+          </div>
         </Reveal>
       </div>
     </section>

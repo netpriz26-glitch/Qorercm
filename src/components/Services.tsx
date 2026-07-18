@@ -3,8 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/content/services";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { TiltCard } from "@/components/ui/TiltCard";
-import { Icon3DTile } from "@/components/ui/Icon3DTile";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function Services() {
@@ -19,13 +17,15 @@ export function Services() {
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <StaggerItem key={service.slug}>
-              <TiltCard tone="plain" className="h-full border border-slate-200 bg-white p-6">
-                <Icon3DTile icon={service.icon} />
+              <div className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-trust-50">
+                  <service.icon className="h-6 w-6 text-trust-600" aria-hidden="true" />
+                </span>
                 <h3 className="mt-4 text-base font-semibold text-slate-900">{service.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {service.shortDescription}
                 </p>
-              </TiltCard>
+              </div>
             </StaggerItem>
           ))}
         </StaggerGroup>
@@ -34,7 +34,7 @@ export function Services() {
           <div className="mt-10 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-trust-700 hover:text-trust-800"
             >
               View all services
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

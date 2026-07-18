@@ -15,7 +15,7 @@ export function TrustBar() {
         <StaggerGroup className="grid grid-cols-2 gap-6 sm:grid-cols-4">
           {badges.map(({ icon: Icon, label }) => (
             <StaggerItem key={label} className="flex flex-col items-center gap-2 text-center">
-              <Icon className="h-6 w-6 text-brand-600" aria-hidden="true" />
+              <Icon className="h-6 w-6 text-trust-600" aria-hidden="true" />
               <span className="text-xs font-semibold text-slate-600 sm:text-sm">{label}</span>
             </StaggerItem>
           ))}

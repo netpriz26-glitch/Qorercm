@@ -28,11 +28,11 @@ export default function LeadershipPage() {
           {leadership.map((leader) => (
             <StaggerItem key={leader.name}>
               <TiltCard tone="plain" className="h-full border border-slate-200 bg-white p-6 text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-accent-500 text-xl font-bold text-white shadow-[0_10px_30px_rgba(96,165,250,0.35)]">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-trust-600 text-xl font-bold text-white">
                   {leader.initials}
                 </div>
                 <h2 className="mt-4 text-base font-semibold text-slate-900">{leader.name}</h2>
-                <p className="text-sm font-medium text-brand-700">{leader.title}</p>
+                <p className="text-sm font-medium text-trust-700">{leader.title}</p>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">{leader.bio}</p>
               </TiltCard>
             </StaggerItem>

@@ -25,7 +25,7 @@ export function LegalPage({
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{title}</h1>
         <p className="mt-2 text-sm text-slate-500">Last updated: {lastUpdated}</p>
 
-        <div className="mt-8 space-y-6 text-slate-700 [&_a]:text-brand-700 [&_a]:underline [&_h2]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_li]:leading-relaxed [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
+        <div className="mt-8 space-y-6 text-slate-700 [&_a]:text-trust-700 [&_a]:underline [&_h2]:mt-8 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_li]:leading-relaxed [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
           {children}
         </div>
       </article>

@@ -63,24 +63,24 @@ export default async function BlogPostPage({
         ]}
       />
 
-      <div className="relative overflow-hidden bg-ink-950 pb-14 pt-32 text-white sm:pb-20 sm:pt-40">
+      <div className="relative overflow-hidden bg-surface-50 pb-14 pt-32 sm:pb-20 sm:pt-40">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-white"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-900"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             Back to Blog
           </Link>
           <Reveal variant="fadeUp">
-            <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-300">
+            <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-trust-700">
               <span>{post.category}</span>
               <span aria-hidden="true">·</span>
               <span>{formattedDate}</span>
               <span aria-hidden="true">·</span>
               <span>{post.readingMinutes} min read</span>
             </div>
-            <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+            <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl">
               {post.title}
             </h1>
           </Reveal>

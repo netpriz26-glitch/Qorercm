@@ -6,36 +6,26 @@ import { forwardLead, LEAD_STORAGE_KEY } from "@/lib/client-lead-submit";
 import { leadFormInitialState, leadFormSchema, type LeadFormValues } from "@/lib/lead-schema";
 import { siteConfig } from "@/lib/site-config";
 import { ShieldCheck } from "lucide-react";
-import { Magnetic } from "@/components/ui/Magnetic";
 import { buttonStyles } from "@/components/ui/button-styles";
 import { cn } from "@/lib/cn";
 
 function SubmitButton({ pending }: { pending: boolean }) {
   return (
-    <Magnetic className="w-full">
-      <button
-        type="submit"
-        disabled={pending}
-        className={cn(buttonStyles({ variant: "primary", size: "lg" }), "w-full")}
-      >
-        {pending ? "Submitting…" : siteConfig.offer.ctaLabel}
-      </button>
-    </Magnetic>
+    <button
+      type="submit"
+      disabled={pending}
+      className={cn(buttonStyles({ variant: "primary", size: "lg" }), "w-full")}
+    >
+      {pending ? "Submitting…" : siteConfig.offer.ctaLabel}
+    </button>
   );
 }
 
-export function LeadForm({
-  compact = false,
-  tone = "light",
-}: {
-  compact?: boolean;
-  tone?: "light" | "dark";
-}) {
+export function LeadForm({ compact = false }: { compact?: boolean }) {
   const [state, setState] = useState(leadFormInitialState);
   const [pending, setPending] = useState(false);
   const router = useRouter();
   const idPrefix = useId();
-  const isDark = tone === "dark";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -85,24 +75,16 @@ export function LeadForm({
     }
   }
 
-  const fieldClass = cn(
-    "w-full rounded-lg border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/40",
-    isDark
-      ? "border-white/15 bg-white/10 text-white placeholder:text-slate-400 focus:border-accent-400"
-      : "border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-600"
-  );
-  const errorClass = cn("mt-1 text-sm", isDark ? "text-red-400" : "text-red-600");
+  const fieldClass =
+    "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-trust-600 focus:outline-none focus:ring-2 focus:ring-trust-500/40";
+  const errorClass = "mt-1 text-sm text-red-600";
 
   return (
     <form onSubmit={handleSubmit} noValidate className="w-full space-y-4">
       {!compact && (
         <div className="space-y-1">
-          <h3 className={cn("text-xl font-bold", isDark ? "text-white" : "text-slate-900")}>
-            {siteConfig.offer.formTitle}
-          </h3>
-          <p className={cn("text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
-            {siteConfig.offer.formSubtitle}
-          </p>
+          <h3 className="text-xl font-bold text-slate-900">{siteConfig.offer.formTitle}</h3>
+          <p className="text-sm text-slate-600">{siteConfig.offer.formSubtitle}</p>
         </div>
       )}
 
@@ -231,21 +213,10 @@ export function LeadForm({
 
       <SubmitButton pending={pending} />
 
-      <p
-        className={cn(
-          "flex items-center gap-1.5 text-xs",
-          isDark ? "text-slate-400" : "text-slate-500"
-        )}
-      >
-        <ShieldCheck
-          className={cn("h-3.5 w-3.5 shrink-0", isDark ? "text-accent-400" : "text-brand-600")}
-          aria-hidden="true"
-        />
+      <p className="flex items-center gap-1.5 text-xs text-slate-500">
+        <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-trust-600" aria-hidden="true" />
         Your information is confidential and HIPAA-compliant. No spam, ever. See our{" "}
-        <a
-          href="/privacy-policy"
-          className={cn("underline", isDark ? "hover:text-white" : "hover:text-slate-700")}
-        >
+        <a href="/privacy-policy" className="underline hover:text-slate-700">
           Privacy Policy
         </a>
         .

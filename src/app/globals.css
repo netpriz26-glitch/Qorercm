@@ -40,6 +40,30 @@
   /* Narrow "positive/growth" indicator — trend icons, up-stat callouts.
      Not part of the main brand gradient. */
   --color-positive-500: var(--color-green-500);
+
+  /* -------------------------------------------------------------------
+     NEW enterprise-healthcare "trust" palette (homepage/Header/Footer
+     redesign) — deep blue + teal, additive alongside the tokens above.
+     Legacy brand/ink/accent tokens remain in place and in use by
+     interior pages until a later sitewide cleanup pass.
+  ---------------------------------------------------------------------- */
+  --color-trust-50: #eff6ff;
+  --color-trust-100: #dbeafe;
+  --color-trust-200: #bfdbfe;
+  --color-trust-300: #93c5fd;
+  --color-trust-400: #60a5fa;
+  --color-trust-500: #2f6fed;
+  --color-trust-600: #1d5bd6;
+  --color-trust-700: #1745a8;
+  --color-trust-800: #123a86;
+  --color-trust-900: #0d2c66;
+  --color-trust-950: #081d45;
+
+  --color-teal-accent-400: #2dd4bf;
+  --color-teal-accent-500: #14b8a6;
+
+  --color-surface-50: #f8fafc;
+  --color-surface-100: #f1f5f9;
 }
 
 body {

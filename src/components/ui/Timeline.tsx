@@ -24,7 +24,7 @@ export function Timeline({ steps, tone = "light" }: { steps: TimelineStep[]; ton
 
       {steps.map((step) => (
         <StaggerItem key={step.number} className="relative pl-10 lg:pl-0">
-          <span className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-accent-500 text-xs font-bold text-white shadow-[0_10px_30px_rgba(96,165,250,0.35)] lg:relative lg:mb-4">
+          <span className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-trust-600 text-xs font-bold text-white lg:relative lg:mb-4">
             {step.number}
           </span>
           <h3

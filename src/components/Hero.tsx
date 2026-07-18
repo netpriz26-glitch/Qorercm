@@ -20,39 +20,23 @@ const trustBadges = [
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-svh items-center overflow-hidden bg-ink-950 text-white">
-      <div className="absolute inset-x-0 bottom-0 top-20 sm:top-24" aria-hidden="true">
-        <Image
-          src={heroDoctor}
-          alt=""
-          fill
-          preload
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover object-[68%_top]"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#070b13_0%,rgba(7,11,19,0.96)_22%,rgba(7,11,19,0.88)_40%,rgba(7,11,19,0.62)_52%,rgba(7,11,19,0.32)_64%,rgba(7,11,19,0.1)_76%,transparent_88%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(7,11,19,0.85)_0%,rgba(7,11,19,0.5)_9%,rgba(7,11,19,0.18)_20%,transparent_32%)]" />
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-ink-950 to-transparent" />
-      </div>
-
-      <div className="relative mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pt-32">
-        <div className="max-w-2xl">
+    <section className="relative bg-white pb-16 pt-28 sm:pb-24 sm:pt-32">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
+        <div>
           <Reveal variant="fadeUp">
-            <p className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-300">
+            <p className="inline-flex items-center rounded-full border border-trust-200 bg-trust-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-trust-700">
               Medical Billing &amp; Revenue Cycle Management
             </p>
           </Reveal>
 
           <Reveal variant="fadeUp" delay={0.08}>
-            <h1 className="heading-hero mt-5 font-heading font-extrabold tracking-tight">
-              <span className="text-gradient-brand">Stop Losing Revenue</span>{" "}
-              to Billing Errors
+            <h1 className="heading-hero mt-5 font-heading font-extrabold tracking-tight text-slate-900">
+              Stop Losing Revenue to Billing Errors
             </h1>
           </Reveal>
 
           <Reveal variant="fadeUp" delay={0.14}>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
               {siteConfig.offer.subheadline}
             </p>
           </Reveal>
@@ -60,8 +44,8 @@ export function Hero() {
           <Reveal variant="fadeUp" delay={0.2}>
             <ul className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
               {heroPoints.map((point) => (
-                <li key={point} className="flex items-center gap-2 text-sm font-medium text-slate-300">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-400" aria-hidden="true" />
+                <li key={point} className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-trust-600" aria-hidden="true" />
                   {point}
                 </li>
               ))}
@@ -73,18 +57,32 @@ export function Hero() {
               <ButtonLink href="#audit-form" size="lg">
                 {siteConfig.offer.ctaLabel}
               </ButtonLink>
-              <ButtonLink href="/services" variant="secondary-dark" size="lg">
+              <ButtonLink href="/services" variant="secondary" size="lg">
                 Explore Services
               </ButtonLink>
             </div>
           </Reveal>
         </div>
 
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-slate-200 shadow-xl lg:aspect-[3/4]">
+          <Image
+            src={heroDoctor}
+            alt=""
+            fill
+            preload
+            fetchPriority="high"
+            sizes="(min-width: 1024px) 40vw, 90vw"
+            className="object-cover object-[68%_top]"
+          />
+        </div>
+      </div>
+
+      <div className="mx-auto mt-12 max-w-7xl px-4 sm:px-6">
         <Reveal variant="fadeUp" delay={0.32}>
-          <ul className="mt-8 flex max-w-4xl flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6">
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-slate-200 pt-8">
             {trustBadges.map(({ icon: Icon, label }) => (
-              <li key={label} className="flex items-center gap-2.5 text-sm font-semibold text-slate-300">
-                <Icon className="h-5 w-5 shrink-0 text-brand-400" aria-hidden="true" />
+              <li key={label} className="flex items-center gap-2.5 text-sm font-semibold text-slate-600">
+                <Icon className="h-5 w-5 shrink-0 text-trust-600" aria-hidden="true" />
                 {label}
               </li>
             ))}

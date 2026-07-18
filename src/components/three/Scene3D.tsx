@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 function SceneLoading() {
   return (
     <div
-      className="absolute inset-0 animate-pulse rounded-[24px] bg-gradient-to-br from-brand-500/15 via-accent-500/10 to-transparent"
+      className="absolute inset-0 animate-pulse rounded-[24px] bg-gradient-to-br from-trust-500/15 via-teal-accent-500/10 to-transparent"
       aria-hidden="true"
     />
   );
@@ -68,7 +68,7 @@ export function Scene3D({
     return (
       <div
         className={cn(
-          "rounded-[24px] bg-gradient-to-br from-brand-500/25 via-accent-500/15 to-transparent",
+          "rounded-[24px] bg-gradient-to-br from-trust-500/25 via-teal-accent-500/15 to-transparent",
           className
         )}
         aria-hidden="true"

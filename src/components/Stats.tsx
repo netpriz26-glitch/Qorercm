@@ -1,4 +1,3 @@
-import { MeshBackground } from "@/components/backgrounds/MeshBackground";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 
@@ -11,8 +10,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="relative overflow-hidden bg-ink-950 py-14 sm:py-16">
-      <MeshBackground />
+    <section className="relative overflow-hidden bg-trust-900 py-14 sm:py-16">
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <StaggerGroup className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {stats.map((stat) => (
@@ -23,7 +21,7 @@ export function Stats() {
                 suffix={stat.suffix}
                 className="text-3xl font-extrabold text-white sm:text-4xl"
               />
-              <div className="mt-1.5 text-sm text-brand-200">{stat.label}</div>
+              <div className="mt-1.5 text-sm text-trust-200">{stat.label}</div>
             </StaggerItem>
           ))}
         </StaggerGroup>
