@@ -3,7 +3,7 @@ import { CheckCircle2, ShieldCheck, BadgeCheck, Lock, Award } from "lucide-react
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/lib/site-config";
-import heroDoctor from "@/assets/images/hero-doctor.png";
+import heroDoctor from "@/assets/images/hero-doctor.webp";
 
 const heroPoints = [
   "Free, no-obligation revenue audit",
