@@ -16,7 +16,7 @@ export function Testimonials() {
         <TestimonialCarousel />
       </div>
 
-      <p className="mt-6 text-center text-xs text-slate-400">
+      <p className="mt-6 text-center text-xs text-slate-500">
         Representative example testimonials — replace with quotes from your own clients (with
         permission) before publishing.
       </p>

@@ -76,11 +76,16 @@ export function TestimonialCarousel() {
               onClick={() => scrollToIndex(i)}
               aria-label={`Go to testimonial ${i + 1} of ${testimonials.length}`}
               aria-current={i === active}
-              className={cn(
-                "h-2 rounded-full transition-all",
-                i === active ? "w-6 bg-brand-600" : "w-2 bg-slate-300"
-              )}
-            />
+              className="flex h-6 w-6 items-center justify-center"
+            >
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "h-2 rounded-full transition-all",
+                  i === active ? "w-6 bg-brand-600" : "w-2 bg-slate-300"
+                )}
+              />
+            </button>
           ))}
         </div>
 

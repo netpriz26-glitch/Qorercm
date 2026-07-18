@@ -62,7 +62,7 @@ export function ServiceSpotlights() {
                     href={`/services/${service.slug}`}
                     className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
                   >
-                    Learn more
+                    Learn more<span className="sr-only"> about {service.name}</span>
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>

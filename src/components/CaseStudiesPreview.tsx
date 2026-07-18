@@ -42,7 +42,7 @@ export function CaseStudiesPreview() {
           ))}
         </StaggerGroup>
 
-        <p className="mt-6 text-center text-xs text-slate-400">
+        <p className="mt-6 text-center text-xs text-slate-500">
           Illustrative example case studies — replace with real, verified client results (with
           permission) before publishing.
         </p>
